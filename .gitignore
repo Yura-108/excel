@@ -1,3 +1,9 @@
 /node_modules/
+<<<<<<< HEAD
 /.idea/
 /dist/
+=======
+/dist/
+/.idea/
+>>>>>>> 69277c46098fa15a768d02b6651b17c5afb59d01
+git
