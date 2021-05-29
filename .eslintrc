@@ -12,7 +12,6 @@
     "quotes": "off",
     "comma-dangle": "off",
     "indent": "off",
-    "require-jsdoc": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }

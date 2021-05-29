@@ -43,6 +43,7 @@ module.exports = {
     },
     devtool: isDev ? 'source-map' : false,
     devServer: {
+        inline: false,
         port: 4200,
         hot: isDev,
     },
@@ -70,25 +71,15 @@ module.exports = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isDev,
-                            reloadAll: true
-                        }
                     },
                     'css-loader',
                     'sass-loader'
                 ],
             },
             {
-                test: /\.m?js$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use: jsLoaders(),
-                loader: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
+                use: jsLoaders()
             }
         ],
     }
