@@ -14,7 +14,8 @@ const jsLoaders = () => {
         {
             loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env']
+                presets: ['@babel/preset-env'],
+                plugins: ['@babel/plugin-proposal-class-properties']
             }
         }
     ]
@@ -35,11 +36,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-      extensions: ['.js'],
-      alias: {
-          '@': path.resolve(__dirname, 'src'),
-          '@core': path.resolve(__dirname, 'src/core'),
-      }
+        extensions: ['.js'],
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@core': path.resolve(__dirname, 'src/core'),
+        }
     },
     devtool: isDev ? 'source-map' : false,
     devServer: {
