@@ -1,6 +1,5 @@
 class Dom {
     constructor(selector) {
-        // #app
         this.$el = typeof selector === 'string'
             ? document.querySelector(selector)
             : selector
@@ -37,9 +36,29 @@ class Dom {
 
         return this
     }
+    closest(selector) {
+        return $(this.$el.closest(selector))
+    }
+
+    getCoords() {
+        return this.$el.getBoundingClientRect()
+    }
+
+    get data() {
+        return this.$el.dataset
+    }
+
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector)
+    }
+
+    css(styles = {}) {
+        Object.keys(styles).forEach(key => {
+            this.$el.style[key] = styles[key]
+        })
+    }
 }
 
-// event.target
 export function $(selector) {
     return new Dom(selector)
 }
